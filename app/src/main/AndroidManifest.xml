@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ChanelMainActivity"></activity>
+        <activity android:name=".ChanelUserListActivity"></activity>
+        <activity android:name=".ChanelMainActivity" />
         <activity android:name=".CreateChannelActivity" />
         <activity
             android:name=".SearchChanelList"
