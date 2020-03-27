@@ -40,7 +40,7 @@ public class ChanelUserListAdapter extends RecyclerView.Adapter<ChanelUserListAd
 
     @Override
     public int getItemCount() {
-        return 10;
+        return 20;
     }
 
     public static class ViewHoder extends RecyclerView.ViewHolder {
