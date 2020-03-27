@@ -15,12 +15,11 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.TextView;
+import io.yagus.iam_view.databinding.ActivitySearchListBinding;
 
-import io.yagus.iam_view.databinding.ActivitySearchChanelListBinding;
+public class SearchListActivity extends AppCompatActivity {
 
-public class SearchChanelList extends AppCompatActivity {
-
-    ActivitySearchChanelListBinding binding;
+    ActivitySearchListBinding binding;
 
     private ChanelListAdapter adapter;
 
@@ -29,7 +28,7 @@ public class SearchChanelList extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = ActivitySearchChanelListBinding.inflate(getLayoutInflater());
+        binding = ActivitySearchListBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
         binding.btChanelList.setOnClickListener(new View.OnClickListener() {
@@ -38,6 +37,8 @@ public class SearchChanelList extends AppCompatActivity {
                 binding.btUserList.setCardBackgroundColor(Color.parseColor("#7E57C2"));
                 binding.btChanelList.setCardBackgroundColor(Color.parseColor("#FFFFFF"));
                 binding.etSearch.setHint("채널을 검색하세요");
+                binding.userOptionSet.setVisibility(View.INVISIBLE);
+                binding.channelOptionSet.setVisibility(View.VISIBLE);
             }
         });
 
@@ -47,6 +48,8 @@ public class SearchChanelList extends AppCompatActivity {
                 binding.btChanelList.setCardBackgroundColor(Color.parseColor("#7E57C2"));
                 binding.btUserList.setCardBackgroundColor(Color.parseColor("#FFFFFF"));
                 binding.etSearch.setHint("유저를 검색하세요");
+                binding.userOptionSet.setVisibility(View.VISIBLE);
+                binding.channelOptionSet.setVisibility(View.INVISIBLE);
 
             }
         });
@@ -84,11 +87,18 @@ public class SearchChanelList extends AppCompatActivity {
             }
         });
 
-        binding.button.setOnClickListener(new View.OnClickListener() {
+        binding.btMoveToCreateChanel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), CreateChannelActivity.class);
                 startActivity(intent);
+            }
+        });
+
+        binding.btUserFilter.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
             }
         });
 

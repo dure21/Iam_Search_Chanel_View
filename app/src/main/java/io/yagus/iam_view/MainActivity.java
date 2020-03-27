@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
         binding.btSearchChanelList.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), SearchChanelList.class);
+                Intent intent = new Intent(getApplicationContext(), SearchListActivity.class);
                 startActivity(intent);
             }
         });
