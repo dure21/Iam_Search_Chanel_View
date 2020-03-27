@@ -32,6 +32,25 @@ public class SearchChanelList extends AppCompatActivity {
         binding = ActivitySearchChanelListBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+        binding.btChanelList.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                binding.btUserList.setCardBackgroundColor(Color.parseColor("#7E57C2"));
+                binding.btChanelList.setCardBackgroundColor(Color.parseColor("#FFFFFF"));
+                binding.etSearch.setHint("채널을 검색하세요");
+            }
+        });
+
+        binding.btUserList.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                binding.btChanelList.setCardBackgroundColor(Color.parseColor("#7E57C2"));
+                binding.btUserList.setCardBackgroundColor(Color.parseColor("#FFFFFF"));
+                binding.etSearch.setHint("유저를 검색하세요");
+
+            }
+        });
+
 
         final ArrayAdapter<String> adpter = new ArrayAdapter<String> (this,R.layout.support_simple_spinner_dropdown_item,spinner_str){
             @NonNull
